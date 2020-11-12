@@ -58,13 +58,3 @@ configure_file(
   "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
   IMMEDIATE @ONLY)
 add_custom_target(uninstall COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
-
-if(CATKIN_ENABLE_TESTING)
-  add_subdirectory(test)
-endif()
-
-if(DOXYGEN_FOUND)
-  add_custom_target(rospack-docs
-    COMMAND doxygen Doxyfile
-    WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})
-endif()
